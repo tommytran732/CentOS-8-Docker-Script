@@ -4,6 +4,13 @@ output(){
     echo -e '\e[36m'$1'\e[0m';
 }
 
+preflight(){
+    output "Simple CentOS 8 Docker Installation Script"
+    output "Copyright © 2020 Thien Tran <contact@thientran.io>."
+    output "Support: https://thientran.io/discord"
+    output ""
+}
+
 os_detection(){
     output "Checking your operating system"
     if [ -r /etc/os-release ]; then
