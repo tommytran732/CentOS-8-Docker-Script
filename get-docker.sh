@@ -28,3 +28,6 @@ install_docker(){
   systemctl enable docker
   systemctl start docker
 }
+
+os_detection
+install_docker
