@@ -36,5 +36,6 @@ install_docker(){
   systemctl start docker
 }
 
+preflight
 os_detection
 install_docker
