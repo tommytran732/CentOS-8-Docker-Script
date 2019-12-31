@@ -31,7 +31,8 @@ os_detection(){
 install_docker(){
   dnf install -y dnf-utils device-mapper-persistent-data lvm2
   dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-  dnf install -y docker-ce containerd.io --nobest
+  dnf install -y containerd.io --nobest
+  dnf install -y docker-ce --nobest
   systemctl enable docker
   systemctl start docker
 }
