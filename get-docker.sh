@@ -20,10 +20,12 @@ os_detection(){
         exit 1
     fi
     
-    if [ "$lsb_dist" =  "centos" ] || [ "$dist_version" = "8" ]; then
-       output "CentOS 8 Detected. Good to go."
+    if [ "$lsb_dist" =  "centos" ] || [ "$lsb_dist" =  "rhel" ]; then
+       if [ "$dist_version" = "8" ]
+        output "CentOS 8 Detected. Good to go."
+       fi
     else 
-       output "Unsupported operating system. Only CentOS 8 is supported."
+       output "Unsupported operating system. Only RHEL/CentOS 8 is supported."
        exit 1
     fi
 }
