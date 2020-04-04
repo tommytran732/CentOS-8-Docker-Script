@@ -5,7 +5,7 @@ output(){
 }
 
 preflight(){
-    output "CentOS 8 Docker Installation Script"
+    output "RHEL/CentOS 8 Docker Installation Script"
     output "Copyright © 2020 Thien Tran <contact@thientran.io>."
     output "Support: https://thientran.io/discord"
     output ""
