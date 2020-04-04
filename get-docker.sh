@@ -21,7 +21,7 @@ os_detection(){
     fi
     
     if [ "$lsb_dist" =  "centos" ] || [ "$lsb_dist" =  "rhel" ]; then
-       if [ "$dist_version" = "8" ]
+       if [ "$dist_version" = "8" ]; then
         output "CentOS 8 Detected. Good to go."
        fi
     else 
