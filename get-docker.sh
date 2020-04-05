@@ -42,6 +42,16 @@ install_docker(){
   systemctl start docker
 }
 
+firewalld_fix(){
+  if ! [ -x "$(command -v firewall-cmd)" ]; then
+     output "Firewalld detected. Adding rules to make sure firewalld works with Docker."
+     firewall-cmd --change-interface=docker0 --permanent
+     firewall-cmd --zone=trusted --add-masquerade --permanent
+     firewall-cmd --reload
+  fi
+}
+
 preflight
 os_detection
 install_docker
+firewalld_fix
