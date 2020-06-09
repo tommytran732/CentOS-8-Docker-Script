@@ -21,7 +21,7 @@ os_detection(){
     fi
     
     if [ "$lsb_dist" =  "centos" ] || [ "$lsb_dist" =  "rhel" ]; then    
-        if [ "$dist_version" = "8" ]; then
+        if [ "$dist_version" = "8" ] || [ "$dist_version" = "8.1" ] || [ "$dist_version" = "8.2" ] ; then
             if [ "$lsb_dist" =  "rhel" ]; then
                 output "Red Hat Enterprise Linux 8 Detected. Good to go."
             else
