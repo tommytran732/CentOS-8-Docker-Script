@@ -16,12 +16,15 @@ os_detection(){
     if [ -r /etc/os-release ]; then
         lsb_dist="$(. /etc/os-release && echo "$ID")"
         dist_version="$(. /etc/os-release && echo "$VERSION_ID")"
+        if [ $lsb_dist = "rhel" ]; then
+            dist_version="$(echo $dist_version | awk -F. '{print $1}')"
+        fi
     else
         exit 1
     fi
     
     if [ "$lsb_dist" =  "centos" ] || [ "$lsb_dist" =  "rhel" ]; then    
-        if [ "$dist_version" = "8" ] || [ "$dist_version" = "8.1" ] || [ "$dist_version" = "8.2" ] ; then
+        if [ "$dist_version" = "8" ]; then
             if [ "$lsb_dist" =  "rhel" ]; then
                 output "Red Hat Enterprise Linux 8 Detected. Good to go."
             else
