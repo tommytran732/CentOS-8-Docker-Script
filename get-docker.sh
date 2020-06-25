@@ -30,6 +30,8 @@ os_detection(){
             else
                 output "CentOS 8 Detected. Good to go."
             fi
+        else
+            output "Unsupported operating system. Only RHEL/CentOS 8 is supported."
         fi
     else 
        output "Unsupported operating system. Only RHEL/CentOS 8 is supported."
